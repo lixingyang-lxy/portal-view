@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="lib/template-web.js"></script>
+  <script id="tpl-students" type="text/html">
+    {{each students}}
+      <div class="item">{{$value.name}} {{$value.age}} {{$value.sex}}</div>
+    {{/each}}
+  </script>
+  
+</head>
+<body>
+  <div>info页面</div>
+  <script type="text/javascript">
+    const students = [
+      {
+        name: 'lee',
+        age: 24,
+        sex: 'male'
+      },
+      {
+        name: 'rong',
+        age: 24,
+        sex: 'female'
+      }
+    ]
+    let lister = document.getElementById("lister");
+    lister.innerHTML = template("tpl-students", {
+      students: students
+    })
+    
+  </script>
+</body>
+</html>

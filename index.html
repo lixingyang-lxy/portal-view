@@ -12,19 +12,20 @@
   <link rel="stylesheet" type="text/css" href="css/init.css">
   <script src="lib/jquery-3.6.1.js"></script>
   <script src="./lib/less.min.js" type="text/javascript"></script>
+  <script src="./lib/change.js"></script>
 </head>
 
 <body class="body">
   <header class="header">
-    <div id="lister" class="iblock list"></div>
+    <div class="iblock list" id="lister"></div>
     <div class="iblock logo"></div>
-    <div id="list" class="iblock list">
+    <div class="iblock list" id="list">
       <div class="item active">工作门户</div>
       <div class="item">信息门户</div>
       <div class="item">数字门户</div>
     </div>
     <div class="iblock info cursor">
-      <span id="info" class="iblock title">info</span>
+      <span class="iblock title" id="info">info</span>
       <div class="iblock popUp hidden"></div>
     </div>
     <div class="list flex1" style="text-align: right;">
@@ -37,7 +38,7 @@
         <span class="icon iconfont">&#xe600;</span>
         张三
       </div>
-      <div class="item">
+      <div class="item" id="setting">
         <span class="icon iconfont">&#xe64b;</span>
       </div>
     </div>
@@ -56,6 +57,14 @@
         element.className = "item"
       });
       e.target.className = "item active"
+    }, false)
+    let setting = document.getElementById("setting")
+    setting.addEventListener("click", function(e) {
+      let value = {
+        primary: "primary",
+        danger: "danger"
+      }
+      changeTheme(value)
     }, false)
   </script>
 </body>

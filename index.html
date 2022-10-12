@@ -17,31 +17,36 @@
 
 <body class="body">
   <header class="header">
-    <div class="iblock list" id="lister"></div>
-    <div class="iblock logo"></div>
-    <div class="iblock list" id="list">
-      <div class="item active">工作门户</div>
-      <div class="item">信息门户</div>
-      <div class="item">数字门户</div>
-    </div>
-    <div class="iblock info cursor">
-      <span class="iblock title" id="info">info</span>
-      <div class="iblock popUp hidden"></div>
-    </div>
-    <div class="list flex1" style="text-align: right;">
-      <div class="item iblock search">
-        <input type="text" value="" placeholder="通讯录"><span class="icon iconfont">&#xe645;</span></input>
-        <!-- <img src="./images/relative.png" class="relative" alt=""> -->
+    <div class="header-header">
+      <div class="iblock list" id="lister"></div>
+      <div class="iblock logo"></div>
+      <div class="iblock list" id="list">
+        <div class="item active">工作门户</div>
+        <div class="item">信息门户</div>
+        <div class="item">数字门户</div>
+      </div>
+      <div class="iblock info cursor">
+        <span class="iblock title" id="info">info</span>
+        <div class="iblock popUp hidden"></div>
+      </div>
+      <div class="list flex1" style="text-align: right;">
+        <div class="item iblock search">
+          <input type="text" value="" placeholder="通讯录"><span class="icon iconfont">&#xe645;</span></input>
+          <!-- <img src="./images/relative.png" class="relative" alt=""> -->
 
-      </div>
-      <div class="item">
-        <span class="icon iconfont">&#xe600;</span>
-        张三
-      </div>
-      <div class="item" id="setting">
-        <span class="icon iconfont">&#xe64b;</span>
+        </div>
+        <div class="item">
+          <div class="user">
+            <span class="icon iconfont" style="position: absolute;font-size: 24px;left: -12px;">&#xe600;</span>
+            张三
+          </div>
+        </div>
+        <div class="item" id="setting">
+          <span class="icon iconfont">&#xe64b;</span>
+        </div>
       </div>
     </div>
+
   </header>
   <section class="section"></section>
   <main class="main"></main>
@@ -59,7 +64,7 @@
       e.target.className = "item active"
     }, false)
     let setting = document.getElementById("setting")
-    setting.addEventListener("click", function(e) {
+    setting.addEventListener("click", function (e) {
       let value = {
         primary: "primary",
         danger: "danger"

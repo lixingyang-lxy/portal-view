@@ -1,23 +1,48 @@
-// base.less
 :root {
     --primary: #51B3FE;
     --danger: #FB2123;
     // --info: white;
     // --warning: yellow;
-  }
+}
 
-  @primary: var(--primary);
-  @danger: var(--danger);
+@primary: var(--primary);
+@danger: var(--danger);
 //   @info: var(--info);
+.primary {
+    --theme-bg: url("../images/bgcolor-init.png");
+    --theme-color: #0C367E;
+}
+
+.danger {
+    --theme-bg: url("../images/bgcolor-spring.png");
+    --theme-color: #8A0000;
+}
+@theme-bg: var(--theme-bg);
 
 .body { 
     min-width: 1000px;
     .header {
         background-color: @danger;
         // color: @info;
+        // background-image: @theme-bg;
+        background-size: cover;
         width: 100%;
         height: 378px;
-        // background-color: blue;
+        position: relative;
+        .tab {
+            width: 30px;
+            height: 15px;
+            line-height: 15px;
+            border-radius: 7px;
+            position: absolute;
+            bottom: 30px;
+            right: 100px;
+            background-color: #FAECDE;
+            color: #726D67;
+            text-align: center;
+            font-size: 10px;
+            cursor: pointer;
+        }
         .header-header {
             color: #fff;
             font-size: 12px;
@@ -144,7 +169,8 @@
     .footer {
         width: 100%;
         height: 50px;
-        background-color: brown;
+        text-align: center;
+        background-color: var();
     }
     
 }

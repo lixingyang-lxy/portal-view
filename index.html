@@ -8,7 +8,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="./css/iconfont.css">
   <link rel="stylesheet/less" type="text/css" href="./css/style.less" />
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
   <link rel="stylesheet" type="text/css" href="css/init.css">
   <script src="lib/jquery-3.6.1.js"></script>
   <script src="./lib/less.min.js" type="text/javascript"></script>
@@ -49,11 +49,45 @@
 
   </header>
   <section class="section"></section>
-  <main class="main"></main>
+  <main class="main" id="main">
+    <div class="iblock left" id="left">
+      <div class="toLeft targetItem" onmousedown="drag(event, 'left')">
+        <div class="iblock item">
+          <span class="block ctext title">5</span>
+          <span class="block ctext content">我的待办</span>
+          <span class="block ctext">ds</span>
+        </div>
+        <div class="iblock item">
+          <span class="block ctext title">5</span>
+          <span class="block ctext content">我的待办</span>
+          <span class="block ctext">ds</span>
+        </div>
+        <div class="iblock item">
+          <span class="block ctext title">5</span>
+          <span class="block ctext content">我的待办</span>
+          <span class="block ctext">ds</span>
+        </div>
+        <div class="iblock item">
+          <span class="block ctext title">5</span>
+          <span class="block ctext content">我的待办</span>
+          <span class="block ctext">ds</span>
+        </div>
+      </div>
+    </div>
+    <div class="iblock center" id="center">
+      <div class="toCenter targetItem" onmousedown="drag(event, 'center')"></div>
+    </div>
+    <div class="iblock right" id="right">
+      <div class="toRight targetItem" onmousedown="drag(event, 'right')"></div>
+    </div>
+  </main>
   <footer class="footer">
-    版权所有  中国航发湖南动力机械研究所
+    版权所有 中国航发湖南动力机械研究所
   </footer>
   <script type="text/javascript">
+    window.onload = function () {
+      changeTheme({ "primary": "primary" })
+    }
     let info = document.getElementById("info")
     info.addEventListener("mousemove", function (e) {
       e.target.nextElementSibling.className = e.target.nextElementSibling.className.includes('hidden') ? "popUp" : "popUp hidden"
@@ -73,6 +107,12 @@
       }
       changeTheme(value)
     }, false)
+    // function drag() {
+    //   alert()
+    // }
+    // document.getElementById("main").addEventListener('mousedown', function() {
+    //   drag();
+    // }, false)
   </script>
 </body>
 
